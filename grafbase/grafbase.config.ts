@@ -6,12 +6,12 @@ const User = g.model("User", {
   description: g.string().optional(),
   githubUrl: g.url().optional(),
   projects: g
-    .relation(() => project)
+    .relation(() => Project)
     .list()
     .optional(),
 });
 
-const project = g.model("project", {
+const Project = g.model("Project", {
   title: g.string().length({ min: 3 }),
   description: g.string(),
   image: g.url(),
